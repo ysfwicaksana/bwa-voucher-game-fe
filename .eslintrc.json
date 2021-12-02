@@ -1,3 +1,45 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ],
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["Label"],
+        "required": {
+          "every": ["nesting", "id"]
+        },
+        "allowChildren": false
+      }
+    ],
+    "jsx-ally/anchor-is-valid": "off"
+  },
+  "required": {
+    "some": ["nesting", "id"]
+  }
 }
